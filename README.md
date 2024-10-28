@@ -1,6 +1,4 @@
-Here's the complete `README.md` formatted correctly in Markdown:
 
-````markdown
 # Electron Template
 
 This is a template for building cross-platform desktop applications using Electron, React, and TypeScript.
@@ -73,4 +71,3 @@ This template leverages Vite for bundling, Electron for the backend, and Electro
 
 This version keeps all the content intact and formatted correctly in Markdown. Let me know if any other changes are needed!
 ```
-````

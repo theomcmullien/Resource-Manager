@@ -1,30 +1,29 @@
 
-# Electron Template
+# Resource Manager
 
-This is a template for building cross-platform desktop applications using Electron, React, and TypeScript.
+My first Electron.js desktop app following [this tutorial](https://www.youtube.com/watch?v=fP-371MN0Ck).
 
 ## Features
 
--   **Backend**: Electron
+-   **Language**: TypeScript
 -   **Frontend**: React
--   **Frontend and Backend Language**: TypeScript
+-   **Backend**: Electron
 -   **Bundler**: Vite
--   **Packaging**: Electron-Builder (for macOS, Linux, and Windows)
+-   **Packaging**: Electron-Builder
 
 ## Getting Started
 
-1. **Build the project**:
+1. **Build the project locally**:
     ```bash
     npm run build
     ```
 
-2. **Transpile Electron files separately (optional)**:
-
+2. **Transpile electron files (optional)**:
     ```bash
     npm run transpile:electron
     ```
 
-3. **Start development mode (includes transpiling Electron)**:
+3. **Run development mode (`dev:react`, `dev:electron`, `transpile:electron`)**:
     ```bash
     npm run dev
     ```
@@ -33,41 +32,19 @@ This is a template for building cross-platform desktop applications using Electr
 
 To create a distributable package for a specific OS, run one of the following commands:
 
--   **For macOS**:
-
-    ```bash
-    npm run dist-mac
-    ```
-
--   **For Windows**:
+-   **Windows**:
 
     ```bash
     npm run dist-win
     ```
 
--   **For Linux**:
+-   **macOS**:
+
+    ```bash
+    npm run dist-mac
+    ```
+
+-   **Linux**:
     ```bash
     npm run dist-linux
     ```
-
-## Additional Commands
-
--   **Lint the project**:
-
-    ```bash
-    npm run lint
-    ```
-
--   **Preview the production build**:
-    ```bash
-    npm run preview
-    ```
-
-## Notes
-
-This template leverages Vite for bundling, Electron for the backend, and Electron-Builder for creating OS-specific packages.
-
-```
-
-This version keeps all the content intact and formatted correctly in Markdown. Let me know if any other changes are needed!
-```

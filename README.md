@@ -19,7 +19,6 @@ This is a template for building cross-platform desktop applications using Electr
     ```bash
     npm run build
     ```
-````
 
 2. **Transpile Electron files separately (optional)**:
 
@@ -74,3 +73,4 @@ This template leverages Vite for bundling, Electron for the backend, and Electro
 
 This version keeps all the content intact and formatted correctly in Markdown. Let me know if any other changes are needed!
 ```
+````

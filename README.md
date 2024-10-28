@@ -13,17 +13,22 @@ My first Electron.js desktop app following [this tutorial](https://www.youtube.c
 
 ## Getting Started
 
-1. **Build the project locally**:
+1. **Install dependencies (`node_modules`)**:
+    ```bash
+    npm install
+    ```
+
+2. **Build the project locally**:
     ```bash
     npm run build
     ```
 
-2. **Transpile electron files (optional)**:
+3. **Transpile electron files (optional)**:
     ```bash
     npm run transpile:electron
     ```
 
-3. **Run development mode (`dev:react`, `dev:electron`, `transpile:electron`)**:
+4. **Run development mode (`dev:react`, `dev:electron`, `transpile:electron`)**:
     ```bash
     npm run dev
     ```

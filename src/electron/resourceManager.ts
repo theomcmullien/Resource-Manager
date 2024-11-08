@@ -10,7 +10,11 @@ export function pollResource(mainWindow: BrowserWindow) {
         const cpuUsage = await getCpuUsage();
         const ramUsage = getRamUsage();
         const storageData = getStorageData();
-        mainWindow.webContents.send('statistics', { cpuUsage, ramUsage, storageUsage: storageData.usage });
+        mainWindow.webContents.send('statistics', {
+            cpuUsage,
+            ramUsage,
+            storageUsage: storageData.usage
+        });
     }, POLLING_INTERVAL);
 }
 

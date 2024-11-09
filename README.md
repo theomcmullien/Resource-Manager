@@ -31,13 +31,13 @@ My first Electron.js desktop app following [this tutorial](https://www.youtube.c
 
 ## Building for Production
 
-1. **Build the project locally**:
+1. **Build the project locally (optional)**:
 
     ```bash
     npm run build
     ```
 
-2. **Create a distributable package**:
+2. **Create a distributable package (`transpile:electron`, `build`, `electron-builder`)**:
 
     - **Windows**:
 

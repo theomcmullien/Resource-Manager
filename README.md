@@ -37,7 +37,7 @@ My first Electron.js desktop app following [this tutorial](https://www.youtube.c
     npm run build
     ```
 
-2. **Create a distributable package** for a specific OS:
+2. **Create a distributable package**:
 
     - **Windows**:
 

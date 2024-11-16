@@ -1,6 +1,7 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Tray } from 'electron';
+import path from 'path';
 import { ipcMainHandle, isDev } from './util.js';
-import { getPreloadPath, getUIPath } from './pathResolver.js';
+import { getAssetsPath, getPreloadPath, getUIPath } from './pathResolver.js';
 import { getStaticData, pollResource } from './resourceManager.js';
 
 app.on('ready', () => {
@@ -20,4 +21,6 @@ app.on('ready', () => {
     ipcMainHandle('getStaticData', () => {
         return getStaticData();
     });
+
+    new Tray(path.join(getAssetsPath(), process.platform === 'darwin' ? 'icons/tray_iconTemplate.png' : 'icons/tray_icon.png'));
 });

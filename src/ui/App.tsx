@@ -11,8 +11,6 @@ function App() {
         return statistics.map((stat) => stat.cpuUsage);
     }, [statistics]);
 
-    console.log(statistics);
-
     return (
         <>
             <div className='chart1'>

@@ -21,7 +21,7 @@ app.on('ready', () => {
         mainWindow.loadFile(getUIPath());
     }
 
-    pollResource(mainWindow);
+    pollResource(mainWindow); //send data to window
 
     ipcMainHandle('getStaticData', () => {
         return getStaticData();
@@ -42,7 +42,7 @@ function handleCloseEvents(mainWindow: BrowserWindow) {
         if (app.dock) app.dock.hide(); //macOS
     });
 
-    app.on('before-quit', () => closing = true);
+    app.on('before-quit', () => (closing = true));
 
-    mainWindow.on('show', () => closing = false);
+    mainWindow.on('show', () => (closing = false));
 }

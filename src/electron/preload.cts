@@ -1,14 +1,9 @@
-import { ipcRenderer } from 'electron';
-
 const electron = require('electron');
 
 electron.contextBridge.exposeInMainWorld('electron', {
-    subscribeStatistics: (callback) => {
-        ipcRendererOn('statistics', (stats) => {
-            callback(stats);
-        });
-    },
+    subscribeStatistics: (callback) => ipcRendererOn('statistics', (stats) => callback(stats)),
     getStaticData: () => ipcRendererInvoke('getStaticData'),
+    subscribeChangeView: (callback) => ipcRendererOn('changeView', (view) => callback(view)),
 } satisfies Window['electron']);
 
 // frontend adapters (type safe)
@@ -17,5 +12,11 @@ function ipcRendererInvoke<Key extends keyof EventPayloadMapping>(key: Key): Pro
 }
 
 function ipcRendererOn<Key extends keyof EventPayloadMapping>(key: Key, callback: (payload: EventPayloadMapping[Key]) => void) {
-    electron.ipcRenderer.on(key, (event, payload) => callback(payload));
+    const cb = (event: Electron.IpcRendererEvent, payload: any) => callback(payload);
+    electron.ipcRenderer.on(key, cb);
+    return () => electron.ipcRenderer.off(key, cb);
+}
+
+function ipcRendererSend<Key extends keyof EventPayloadMapping>(key: Key, payload: EventPayloadMapping[Key]) {
+    electron.ipcRenderer.send(key, payload);
 }

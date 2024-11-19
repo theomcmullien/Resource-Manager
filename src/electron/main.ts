@@ -9,6 +9,8 @@ import { createMenu } from './menu.js';
 
 app.on('ready', () => {
     const mainWindow = new BrowserWindow({
+        width: 1000,
+        height: 600,
         webPreferences: {
             preload: getPreloadPath(),
         },
@@ -16,7 +18,7 @@ app.on('ready', () => {
 
     if (isDev()) {
         mainWindow.loadURL('http://localhost:5123');
-        mainWindow.webContents.openDevTools();
+        // mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile(getUIPath());
     }

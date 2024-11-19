@@ -23,9 +23,7 @@ app.on('ready', () => {
 
     pollResource(mainWindow); //send data to window
 
-    ipcMainHandle('getStaticData', () => {
-        return getStaticData();
-    });
+    ipcMainHandle('getStaticData', () => getStaticData());
 
     createTray(mainWindow);
     createMenu(mainWindow);

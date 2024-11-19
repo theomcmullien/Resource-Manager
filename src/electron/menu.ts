@@ -8,8 +8,8 @@ export function createMenu(mainWindow: BrowserWindow) {
                 label: process.platform === 'darwin' ? undefined : 'App',
                 type: 'submenu',
                 submenu: [
-                    { label: 'Quit', click: app.quit },
                     { label: 'Dev Tools', click: () => mainWindow.webContents.openDevTools(), visible: isDev() },
+                    { label: 'Quit', click: app.quit },
                 ],
             },
             {
